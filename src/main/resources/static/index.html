@@ -1,4 +1,3 @@
-<!-- ✅ UPDATED index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,73 +7,79 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 <body class="light-mode">
-<div class="container">
-    <h1>Infix ➔ Prefix Converter</h1>
+<div class="blur-wrapper">
+    <div class="container">
+        <h1>Infix ➔ Prefix Converter</h1>
 
-    <!-- Input Section -->
-    <div class="input-section">
-        <input type="text" id="infixInput" placeholder="Enter Infix Expression (e.g., (A+B)*C)" />
-        <button onclick="convertExpression()">Convert</button>
-        <button onclick="copyResult()">Copy</button>
-        <button onclick="clearFields()">Clear</button>
-        <button onclick="toggleProcess()">View Process</button>
-    </div>
+        <!-- Input Section -->
+        <div class="input-section">
+            <input type="text" id="infixInput" placeholder="Enter Infix Expression (e.g., (A+B)*C)" />
+            <button onclick="convertExpression()">Convert</button>
+            <button onclick="copyResult()">Copy</button>
+            <button onclick="clearFields()">Clear</button>
+            <button onclick="toggleProcess()">View Process</button>
+        </div>
 
-    <!-- Output Section -->
-    <div id="result">
-        <h2>Prefix Output:</h2>
-        <p id="prefixOutput">---</p>
-    </div>
+        <!-- Output Section -->
+        <div id="result">
+            <h2>Prefix Output:</h2>
+            <p id="prefixOutput">---</p>
+        </div>
 
-    <!-- Conversion History -->
-    <div id="history">
-        <h2>Conversion History</h2>
-        <table>
-            <thead>
-            <tr>
-                <th>Infix</th>
-                <th>Prefix</th>
-                <th>Action</th>
-            </tr>
-            </thead>
-            <tbody id="historyTable"></tbody>
-        </table>
-    </div>
+        <!-- Conversion History -->
+        <div id="history">
+            <h2>Conversion History</h2>
+            <table>
+                <thead>
+                <tr>
+                    <th>Infix</th>
+                    <th>Prefix</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <tbody id="historyTable"></tbody>
+            </table>
+        </div>
 
-    <!-- Process Table Section -->
-    <div id="processTableSection" class="hidden">
-        <h2>Conversion Steps</h2>
-        <table id="processTable">
-            <thead>
-            <tr>
-                <th>Step</th>
-                <th>Symbol</th>
-                <th>Stack</th>
-                <th>Output</th>
-            </tr>
-            </thead>
-            <tbody></tbody>
-        </table>
-    </div>
+        <!-- Process Table Section -->
+        <div id="processTableSection" class="hidden">
+            <h2>Conversion Steps</h2>
+            <table id="processTable">
+                <thead>
+                <tr>
+                    <th>Step</th>
+                    <th>Symbol</th>
+                    <th>Stack</th>
+                    <th>Output</th>
+                </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
 
-    <!-- Theme Toggle -->
-    <div class="theme-toggle">
-        <label for="themeSwitch">🌙 Toggle Dark Mode</label>
-        <input type="checkbox" id="themeSwitch" onclick="toggleTheme()" />
+        <!-- Theme Toggle -->
+        <div class="theme-toggle">
+            <label for="themeSwitch">🌙 Toggle Dark Mode</label>
+            <input type="checkbox" id="themeSwitch" onclick="toggleTheme()" />
+        </div>
     </div>
 </div>
 
-<!-- Fullscreen Popups -->
+<!-- ✅ Popups with Captions -->
 <div id="fullscreenError" class="fullscreen-popup hidden">
-    <img src="invalid.gif" alt="Invalid Expression!">
+    <div class="popup-card">
+        <img src="invalid.gif" alt="Invalid Expression">
+        <p class="popup-caption">Invalid Input</p>
+    </div>
 </div>
+
 <div id="fullscreenThinking" class="fullscreen-popup hidden">
-    <img src="thk.gif" alt="Thinking...">
+    <div class="popup-card">
+        <img src="thk.gif" alt="Thinking...">
+        <p class="popup-caption">Processing...</p>
+    </div>
 </div>
 
 <script src="script.js"></script>
 </body>
 </html>
-
-
-

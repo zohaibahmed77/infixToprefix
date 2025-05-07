@@ -28,7 +28,7 @@ function convertExpression() {
         return;
       }
 
-      showPopup(thinkingPopup); // Show only for valid input
+      showPopup(thinkingPopup);
 
       setTimeout(() => {
         output.innerText = prefix;
@@ -46,9 +46,14 @@ function convertExpression() {
 }
 
 function showPopup(popup) {
+  document.body.classList.add("popup-active");
   document.querySelectorAll(".fullscreen-popup").forEach(p => p.classList.add("hidden"));
   popup.classList.remove("hidden");
-  setTimeout(() => popup.classList.add("hidden"), 2000);
+
+  setTimeout(() => {
+    popup.classList.add("hidden");
+    document.body.classList.remove("popup-active");
+  }, 2000);
 }
 
 function updateHistory() {
@@ -120,5 +125,3 @@ function renderProcessTable(steps) {
     row.insertCell(3).innerText = s.output;
   });
 }
-
-
