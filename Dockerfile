@@ -1,8 +1,5 @@
-# Use an official OpenJDK image
+# Use official OpenJDK image
 FROM openjdk:17-jdk-slim
-
-# Add a volume pointing to /tmp
-VOLUME /tmp
 
 # Copy the built JAR file into the container
 COPY target/*.jar app.jar
